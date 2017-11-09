@@ -1,19 +1,20 @@
 class CocktailsController < ApplicationController
   before_action :find_cocktail, only: %i(show)
   def index
-    @cockstails = Cocktail.all
+    @cocktails = Cocktail.all
   end
 
   def show
   end
 
-  def
+  def new
     @cocktail = Cocktail.new
   end
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save
+    return render :new unless @cocktail.save
+    redirect_to cocktail_path(@cocktail)
   end
 
 private
