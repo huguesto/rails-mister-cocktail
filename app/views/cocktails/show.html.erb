@@ -1,14 +1,21 @@
 <h1><%= @cocktail.name %></h1>
 
+<div id="container">
 <ul>
   <% @cocktail.doses.each do |dose|%>
-   <li><%= dose.description %> de <%= dose.ingredient.name %> </li>
+    <% if dose.persisted? %>
+     <li>
+      <%= dose.description %> de <%= dose.ingredient.name %>
+      <%= link_to "x", dose_path(dose), method: :delete %>
+    </li>
+    <% end  %>
   <% end  %>
 </ul>
 
 <%= render 'doses/form', dose: @dose, cocktail: @cocktail  %>
+</div>
 
 
 
 <br>
-<%= link_to "Découvrez nos cocktails", cocktails_path %>
+<%= link_to "Découvrez nos cocktails", "/" %>

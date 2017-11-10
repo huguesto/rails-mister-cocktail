@@ -23,9 +23,28 @@
 # end
 
 # puts "Finished!\n\n"
+Cocktail.destroy_all
+Ingredient.destroy_all
 
-Cocktail.create(name: "MDMA")
+Cocktail.create(name: "Cuba libre")
+Cocktail.create(name: "Cocktail Trinidad")
+Cocktail.create(name: "Daïguiri")
+
 Ingredient.create(name: "lemon")
+Ingredient.create(name: "lime")
 Ingredient.create(name: "ice")
+Ingredient.create(name: "white rum")
+Ingredient.create(name: "soda")
+Ingredient.create(name: "sugar")
 Ingredient.create(name: "mint leaves")
-Ingredient.create(name: "ammoniac")
+Ingredient.create(name: "grapefruit")
+Ingredient.create(name: "mango nectar")
+Ingredient.create(name: "coconut milk")
+
+
+Cocktail.all.each do |cock|
+  puts cock.name
+end
+
+
+

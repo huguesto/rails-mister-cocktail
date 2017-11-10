@@ -1,5 +1,6 @@
 <%= simple_form_for [cocktail, dose] do |f| %>
   <%= f.input :description, hint: 'en cl' %>
-  <%= f.association :ingredient, collection: Ingredient.all %>
+  <%= f.association :ingredient %>
+  <%#= f.input :ingredient, collection: Ingredient.all %>
   <%= f.button :submit %>
 <% end  %>
