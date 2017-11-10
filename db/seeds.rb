@@ -23,28 +23,30 @@
 # end
 
 # puts "Finished!\n\n"
+Dose.destroy_all
 Cocktail.destroy_all
 Ingredient.destroy_all
 
-Cocktail.create(name: "Cuba libre")
+cuba_libre = Cocktail.create(
+  name: "Cuba libre",
+  photo_url: "http://shake-that.com/wp-content/uploads/2015/07/Cuba-Libre1.jpg"
+)
 Cocktail.create(name: "Cocktail Trinidad")
 Cocktail.create(name: "Daïguiri")
 
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "lime")
 Ingredient.create(name: "ice")
-Ingredient.create(name: "white rum")
-Ingredient.create(name: "soda")
+rum = Ingredient.create(name: "white rum")
+soda = Ingredient.create(name: "soda")
 Ingredient.create(name: "sugar")
 Ingredient.create(name: "mint leaves")
 Ingredient.create(name: "grapefruit")
 Ingredient.create(name: "mango nectar")
 Ingredient.create(name: "coconut milk")
 
-
 Cocktail.all.each do |cock|
   puts cock.name
 end
 
-
-
+Dose.create(cocktail: cuba_libre, ingredient: rum, description: "10cl")
