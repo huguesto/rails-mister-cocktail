@@ -1,6 +1,9 @@
 <%= simple_form_for @cocktail do |f| %>
 <br/>
   <%= f.input :name, label: "Entrez le nom de votre nouveau cocktail" %>
+  <%= f.input :photo, as: :attachinary %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+
+
 

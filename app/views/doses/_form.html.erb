@@ -1,6 +1,15 @@
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, label: "Entrez le nom de votre nouveau cocktail" %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
 <%= simple_form_for [cocktail, dose] do |f| %>
   <%= f.input :description, hint: 'en cl' %>
   <%= f.association :ingredient %>
-  <%#= f.input :ingredient, collection: Ingredient.all %>
   <%= f.button :submit %>
 <% end  %>
+
+
+
+

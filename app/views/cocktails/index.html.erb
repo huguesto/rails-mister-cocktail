@@ -1,10 +1,21 @@
-<h1>Retrouvez nos meilleurs cocktails</h1>
-<%=link_to "Créer un cocktail", new_cocktail_path%>
+<div class="container">
+  <h1>Retrouvez nos meilleurs cocktails</h1>
+  <%=link_to "Créer un cocktail", new_cocktail_path%>
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+          <% if cocktail.photo? %>
+            <%= cl_image_tag cocktail.photo.path, width: 200, height: 300, crop: :fill %>
+          <% else  %>
+            <div class=“card” style=“background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url(’http://www.designersraum.com/pictures/Cocktail-Bar-Interior-Design-of-Hawksworth-Restaurant-Vancouver-Canada.jpg')“>
+         <% end %>
+        <div class="card_description">
+          <%= cocktail.name %> | <%= link_to "Description", cocktail_path(cocktail)%></div>
+          <%= link_to "", cocktail_path(cocktail), class: "card_link" %>
+      <% end  %>
+    </div>
+  </div>
+</div>
 
-<% @cocktails.each do |cocktail| %>
-<ul> <li> <%= cocktail.name %> | <%= link_to "Description", cocktail_path(cocktail)%></li>
-
-</ul>
-<% end  %>
 
 

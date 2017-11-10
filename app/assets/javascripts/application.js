@@ -11,10 +11,12 @@
 // about supported directives.
 
 
-//= require bootstrap-sprockets
-
 
 //= require jquery
+//= require jquery-fileupload/basic
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
